@@ -1,5 +1,0 @@
-C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\PointIntersectors.Census.SqlServer\build\v1.0\bin\x86\debug\TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.dll
-C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\PointIntersectors.Census.SqlServer\build\v1.0\bin\x86\debug\TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.pdb
-C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\PointIntersectors.Census.SqlServer\src\obj\x86\Debug\PointIntersectors.Census.SqlServer.csprojResolveAssemblyReference.cache
-C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\PointIntersectors.Census.SqlServer\src\obj\x86\Debug\TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.dll
-C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\PointIntersectors.Census.SqlServer\src\obj\x86\Debug\TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.pdb
