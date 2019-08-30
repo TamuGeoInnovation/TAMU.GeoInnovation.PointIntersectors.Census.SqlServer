@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Reflection;
 using TAMU.GeoInnovation.PointIntersectors.Census.Census2000;
 using USC.GISResearchLab.AddressProcessing.Core.Standardizing.StandardizedAddresses.Lines.LastLines;
 using USC.GISResearchLab.Common.Databases.QueryManagers;
@@ -36,6 +37,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override string GetStateFips(double longitude, double latitude)
         {
             string ret = "";
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -62,6 +64,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetStateFips: " + e.Message, e);
             }
 
@@ -72,6 +75,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override string GetStateName(double longitude, double latitude)
         {
             string ret = "";
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -106,6 +110,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetStateName: " + e.Message, e);
             }
 
@@ -117,6 +122,8 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override string GetCountyFips(double longitude, double latitude, string state)
         {
             string ret = "";
+
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -150,6 +157,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetCountyFips: " + e.Message, e);
             }
 
@@ -199,6 +207,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetPlaceFips: " + e.Message, e);
             }
 
@@ -210,6 +219,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override string GetMCDFips(double longitude, double latitude, string state, string countyFips)
         {
             string ret = "";
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -262,6 +272,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetMCDFips: " + e.Message, e);
             }
 
@@ -271,6 +282,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override string GetMetDivFips(double longitude, double latitude)
         {
             string ret = "";
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -304,6 +316,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetMetDivFips: " + e.Message, e);
             }
 
@@ -346,6 +359,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetMCDFips: " + e.Message, e);
             }
 
@@ -355,6 +369,8 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override string GetCBSAMicroFips(string cbsaFp)
         {
             string ret = "";
+
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -389,6 +405,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetMCDFips: " + e.Message, e);
             }
 
@@ -400,6 +417,8 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override string GetMSAFipsFromPlaceFips(string stateFips, string placeFips)
         {
             string ret = "";
+
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -424,6 +443,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetMSAFipsFromPlaceFips: " + e.Message, e);
             }
 
@@ -433,6 +453,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override string GetMSAFipsFromCountyFips(string stateFips, string countyFips)
         {
             string ret = "";
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -457,6 +478,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetMSAFipsFromCountyFips: " + e.Message, e);
             }
 
@@ -468,6 +490,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override string GetTractFips(double longitude, double latitude, string state)
         {
             string ret = "";
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -504,6 +527,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetTractFips: " + e.Message, e);
             }
 
@@ -515,6 +539,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override DataTable GetTractRecordAsDataTable(double longitude, double latitude, string state)
         {
             DataTable ret = null;
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -555,6 +580,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetTractRecord: " + e.Message, e);
             }
 
@@ -566,6 +592,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override string GetBlockGroupFips(double longitude, double latitude, string state)
         {
             string ret = "";
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -602,6 +629,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetBlockGroupFips: " + e.Message, e);
             }
 
@@ -611,6 +639,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override DataTable GetBlockGroupRecordAsDataTable(double longitude, double latitude, string state)
         {
             DataTable ret = null;
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -651,6 +680,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetBlockGroupRecord: " + e.Message, e);
             }
 
@@ -665,6 +695,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override DataTable GetRecordAsDataTable(double longitude, double latitude, string state, string countyFips, double version)
         {
             DataTable ret = null;
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -720,6 +751,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetBlockRecord: " + e.Message, e);
             }
 
@@ -729,6 +761,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
         public override DataTable GetNearestBlockRecordAsDataTable(double longitude, double latitude, string state, double distanceThreshold)
         {
             DataTable ret = null;
+            Serilog.Log.Verbose(this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " - entered");
 
             try
             {
@@ -772,6 +805,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             }
             catch (Exception e)
             {
+                Serilog.Log.Error(e, this.GetType().Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 throw new Exception("Exception occurred GetNearestBlockRecordAsDataTable: " + e.Message, e);
             }
 
