@@ -12,7 +12,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2015
 
         #region Properties
 
-        
+
         #endregion
 
         public SqlServerCensus2015StatesPointIntersector()
@@ -23,7 +23,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2015
             : base(version, blockFilesQueryManager, stateFilesQueryManager, countryFilesQueryManager)
         { }
 
-        
+
 
         public override DataTable GetRecordAsDataTable(double longitude, double latitude, string state, string county, double version)
         {

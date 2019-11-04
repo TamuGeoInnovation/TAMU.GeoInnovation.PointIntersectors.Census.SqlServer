@@ -15,7 +15,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
 
         #region Properties
 
-        
+
 
         #endregion
 
@@ -117,7 +117,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             return ret;
         }
 
-        
+
 
         public override string GetCountyFips(double longitude, double latitude, string state)
         {
@@ -164,7 +164,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             return ret;
         }
 
-        
+
 
         public override string GetPlaceFips(double longitude, double latitude, string state)
         {
@@ -177,7 +177,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
                     string sql = "";
                     if (StateUtils.isState(state))
                     {
-                       
+
                         sql += " SELECT ";
                         sql += "  placeFp00 ";
                         sql += " FROM ";
@@ -214,7 +214,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             return ret;
         }
 
-        
+
 
         public override string GetMCDFips(double longitude, double latitude, string state, string countyFips)
         {
@@ -412,7 +412,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             return ret;
         }
 
-        
+
 
         public override string GetMSAFipsFromPlaceFips(string stateFips, string placeFips)
         {
@@ -485,7 +485,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             return ret;
         }
 
-        
+
 
         public override string GetTractFips(double longitude, double latitude, string state)
         {
@@ -534,7 +534,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             return ret;
         }
 
-        
+
 
         public override DataTable GetTractRecordAsDataTable(double longitude, double latitude, string state)
         {
@@ -587,7 +587,7 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             return ret;
         }
 
-       
+
 
         public override string GetBlockGroupFips(double longitude, double latitude, string state)
         {
@@ -687,10 +687,10 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2000
             return ret;
         }
 
-        
 
-       
-        
+
+
+
 
         public override DataTable GetRecordAsDataTable(double longitude, double latitude, string state, string countyFips, double version)
         {

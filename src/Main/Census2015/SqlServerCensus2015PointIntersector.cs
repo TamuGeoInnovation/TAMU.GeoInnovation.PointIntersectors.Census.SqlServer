@@ -784,4 +784,3 @@ namespace TAMU.GeoInnovation.PointIntersectors.Census.SqlServer.Census2015
 
 }
 
-  
